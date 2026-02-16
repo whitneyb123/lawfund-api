@@ -12,7 +12,8 @@
  *   Vercel Dashboard → Your Project → Settings → Environment Variables
  */
 
-const { checkRateLimit } = require('./rateLimit');
+const { checkRateLimit } = require('../rateLimit');
+
 
 // How long we'll wait for Anthropic before giving up.
 // Vercel hobby plan max is 10s — keep this under that.
