@@ -12,7 +12,7 @@
  *   Vercel Dashboard → Your Project → Settings → Environment Variables
  */
 
-const { checkRateLimit } = require('../rateLimit');
+const { checkRateLimit } = require('./rateLimit');
 
 
 // How long we'll wait for Anthropic before giving up.
