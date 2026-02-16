@@ -17,11 +17,11 @@ const { checkRateLimit } = require('../rateLimit');
 
 // How long we'll wait for Anthropic before giving up.
 // Vercel hobby plan max is 10s — keep this under that.
-const TIMEOUT_MS = 8000;
+const TIMEOUT_MS = 25000;
 
 // The only model we allow — prevents the client from
 // switching to a more expensive model via request manipulation.
-const ALLOWED_MODEL = 'claude-sonnet-4-5-20250929';
+const ALLOWED_MODEL = 'claude-3-5-haiku-20241022';
 
 module.exports = async function handler(req, res) {
 
