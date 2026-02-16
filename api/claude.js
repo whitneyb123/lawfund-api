@@ -25,21 +25,17 @@ const ALLOWED_MODEL = 'claude-sonnet-4-5-20250929';
 
 module.exports = async function handler(req, res) {
 
-  // ── 1. METHOD GUARD ──────────────────────────────────────────────────────
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
-  // ── 2. CORS ───────────────────────────────────────────────────────────────
-  // Allow requests from your GitHub Pages domain.
-  // Replace with your actual domain — '*' is fine for a demo,
-  // but explicit is better once you have a stable URL.
+ // ── 1. CORS + PREFLIGHT ───────────────────────────────────────────────────
   res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Handle preflight OPTIONS request browsers send before POST
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   // ── 3. RATE LIMIT ─────────────────────────────────────────────────────────
