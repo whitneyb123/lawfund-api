@@ -21,7 +21,7 @@ const TIMEOUT_MS = 25000;
 
 // The only model we allow — prevents the client from
 // switching to a more expensive model via request manipulation.
-const ALLOWED_MODEL = 'claude-4-5-haiku-20251001';
+const ALLOWED_MODEL = 'claude-3-haiku-20240307';
 
 module.exports = async function handler(req, res) {
 
