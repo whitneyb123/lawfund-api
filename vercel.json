@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "claude.js": {
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    { "src": "/api/claude", "dest": "/claude.js" }
+  ]
+}
